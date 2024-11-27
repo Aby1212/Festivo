@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Validar Festivo</h2>
+
+  <div class="form-group">
+    <label for="fecha">Fecha (Formato: yyyy-MM-dd):</label>
+    <input
+      id="fecha"
+      type="date"
+      [(ngModel)]="fecha"
+      class="form-control"
+    />
+  </div>
+  <button (click)="validarFestivo()" class="btn btn-primary">Validar</button>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="esFestivo !== null && !error">
+    <p *ngIf="esFestivo" class="resultado festivo">
+      La fecha {{ fecha }} corresponde a un festivo.
+    </p>
+    <p *ngIf="!esFestivo" class="resultado no-festivo">
+      La fecha {{ fecha }} no es un festivo.
+    </p>
+  </div>
+</div>
+
+

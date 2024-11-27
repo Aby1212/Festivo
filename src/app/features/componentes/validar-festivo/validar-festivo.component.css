@@ -1,0 +1,42 @@
+.container {
+  max-inline-size: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-block-end: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-block-start: 20px;
+}
+
+.resultado {
+  margin-block-start: 20px;
+  font-weight: bold;
+}
+
+.festivo {
+  color: green;
+}
+
+.no-festivo {
+  color: orange;
+}
+
+.btn {
+  display: block;
+  inline-size: 100%;
+  margin-block-start: 10px;
+}

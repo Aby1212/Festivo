@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Listar Festivos</h2>
+
+  <div class="form-group">
+    <label for="anio">Año:</label>
+    <input
+      id="anio"
+      type="number"
+      [(ngModel)]="anio"
+      placeholder="Ingresa un año"
+      class="form-control"
+    />
+  </div>
+  <button (click)="listarFestivos()" class="btn btn-primary">Buscar</button>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="festivos.length > 0">
+    <h3>Festivos encontrados:</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Día</th>
+          <th>Mes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let festivo of festivos; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ festivo.nombre }}</td>
+          <td>{{ festivo.dia }}</td>
+          <td>{{ festivo.mes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="festivos.length === 0 && !error && anio">
+    <p>No se encontraron festivos para el año {{ anio }}.</p>
+  </div>
+</div>
+
+
